@@ -1,20 +1,17 @@
 package com.example.notezy.Fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModel
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.notezy.Database.Note
-import com.example.notezy.Database.NoteDatabase
 import com.example.notezy.R
 import com.example.notezy.ViewModel.NoteViewModel
 import com.example.notezy.databinding.FragmentAddBinding
-import org.w3c.dom.Text
 
 
 class AddFragment : Fragment() {
