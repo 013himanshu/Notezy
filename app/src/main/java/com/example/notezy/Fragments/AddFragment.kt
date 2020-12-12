@@ -28,11 +28,7 @@ class AddFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add, container, false)
 
-//        val application = requireNotNull(this.activity).application
-//
-//        val dataSource = NoteDatabase.getDatabase(application).getNoteDao()
-//
-//        val viewModelFactory = (dataSource, application)
+
         //throwing error
         noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
 
