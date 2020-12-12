@@ -29,6 +29,7 @@ class AddFragment : Fragment() {
         //throwing error
         noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
 
+
         binding.addBtn.setOnClickListener {
             val noteTitle: String = binding.addTitleText.text.toString().trim()
             val noteBody: String = binding.addNoteText.text.toString().trim()
