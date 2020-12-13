@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.notezy.Database.Note
 import com.example.notezy.R
 import com.example.notezy.ViewModel.NoteViewModel
@@ -48,6 +49,7 @@ class AddFragment : Fragment() {
                 else -> {
                     noteViewModel.insertNote(Note(noteTitle, noteBody))
                     Toast.makeText(this.activity, "New Note Added.", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_addFragment_to_noteFragment)
                 }
             }
         }
