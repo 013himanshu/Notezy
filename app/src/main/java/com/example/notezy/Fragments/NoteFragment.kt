@@ -40,8 +40,17 @@ class NoteFragment : Fragment() {
         //NoteViewModel...
         viewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
         viewModel.allNotes.observe(viewLifecycleOwner, Observer { list ->
-            list?.let {
-                adapter.setData(it)
+//            list?.let {
+//                adapter.setData(it)
+//            }
+            if (list.isEmpty()) {
+                binding.recyclerview.visibility = View.INVISIBLE
+                binding.rvEmptyLayout.visibility = View.VISIBLE
+            }
+            else {
+                binding.recyclerview.visibility = View.VISIBLE
+                binding.rvEmptyLayout.visibility = View.INVISIBLE
+                adapter.setData(list)
             }
         })
 
