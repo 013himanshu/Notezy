@@ -4,9 +4,9 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.notezy.Database.Note
+import com.example.notezy.Model.Note
 import com.example.notezy.Database.NoteDatabase
-import com.example.notezy.Database.NoteRepository
+import com.example.notezy.Repository.NoteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

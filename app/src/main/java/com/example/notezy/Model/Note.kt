@@ -1,4 +1,4 @@
-package com.example.notezy.Database
+package com.example.notezy.Model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

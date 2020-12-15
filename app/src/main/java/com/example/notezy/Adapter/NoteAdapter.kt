@@ -3,8 +3,7 @@ package com.example.notezy.Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.notezy.Database.Note
-import com.example.notezy.R
+import com.example.notezy.Model.Note
 import com.example.notezy.databinding.ItemNoteBinding
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.MyViewHolder>() {

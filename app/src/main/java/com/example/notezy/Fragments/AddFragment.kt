@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.notezy.Database.Note
+import com.example.notezy.Model.Note
 import com.example.notezy.R
 import com.example.notezy.ViewModel.NoteViewModel
 import com.example.notezy.databinding.FragmentAddBinding

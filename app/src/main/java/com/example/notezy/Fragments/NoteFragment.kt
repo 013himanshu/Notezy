@@ -9,10 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.notezy.Adapter.NoteAdapter
-import com.example.notezy.Database.Note
 import com.example.notezy.R
 import com.example.notezy.ViewModel.NoteViewModel
 import com.example.notezy.databinding.FragmentNoteBinding
