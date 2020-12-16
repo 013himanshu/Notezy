@@ -38,7 +38,7 @@ class NoteViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    fun deleteAll(note: Note) {
+    fun deleteAll() {
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteAll()
         }

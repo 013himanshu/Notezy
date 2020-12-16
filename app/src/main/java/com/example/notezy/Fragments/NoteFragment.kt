@@ -1,10 +1,10 @@
 package com.example.notezy.Fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -38,9 +38,6 @@ class NoteFragment : Fragment() {
         //NoteViewModel...
         viewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
         viewModel.allNotes.observe(viewLifecycleOwner, Observer { list ->
-//            list?.let {
-//                adapter.setData(it)
-//            }
             if (list.isEmpty()) {
                 binding.recyclerview.visibility = View.INVISIBLE
                 binding.rvEmptyLayout.visibility = View.VISIBLE
@@ -56,8 +53,31 @@ class NoteFragment : Fragment() {
             findNavController().navigate(R.id.action_noteFragment_to_addFragment)
         }
 
+        setHasOptionsMenu(true)
 
         return binding.root
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_delete) {
+            deleteAllNote()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteAllNote() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") { _, _ ->
+            viewModel.deleteAll()
+            Toast.makeText(requireContext(), "All Notes Deleted.", Toast.LENGTH_SHORT).show()
+        }
+        builder.setNegativeButton("No") { _,_ -> }
+        builder.setTitle("Delete Everything?")
+        builder.setMessage("Are you sure you want to delete all notes?")
+        builder.create().show()
+    }
 }
