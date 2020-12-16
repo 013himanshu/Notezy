@@ -43,16 +43,6 @@
                     android:fontFamily="sans-serif-condensed"
                     tools:text="Do your homework and submit the assignment by 5 P.M." />
 
-                <TextView
-                    android:id="@+id/rvDelete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DELETE"
-                    android:textSize="12sp"
-                    android:clickable="true"
-                    android:textColor="@color/secondary_dark"
-                    android:padding="8dp"/>
-
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

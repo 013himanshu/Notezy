@@ -60,6 +60,8 @@ class NoteFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu, menu)
+        val shareMenu = menu.findItem(R.id.menu_share)
+        shareMenu.isVisible = false
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -94,7 +94,7 @@ class EditFragment : Fragment() {
     private fun shareNote() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_TEXT, "${binding.editTitleText.text.toString().trim()} \n\n ${binding.editNoteText.text.toString().trim()}")
+        intent.putExtra(Intent.EXTRA_TEXT, "${binding.editTitleText.text.toString().trim()} \n \n ${binding.editNoteText.text.toString().trim()}")
         startActivity(Intent.createChooser(intent, "Share Note"))
     }
 }

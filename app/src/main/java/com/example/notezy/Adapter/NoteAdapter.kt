@@ -13,11 +13,7 @@ import com.example.notezy.databinding.ItemNoteBinding
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.MyViewHolder>() {
     var allNotes = ArrayList<Note>()
 
-    inner class MyViewHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {
-        val rvTitle = binding.rvTitle
-        val rvBody = binding.rvBody
-        val rvDelete = binding.rvDelete
-    }
+    inner class MyViewHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
