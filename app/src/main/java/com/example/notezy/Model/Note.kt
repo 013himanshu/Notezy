@@ -9,13 +9,12 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @Entity(tableName = "note_table")
 data class Note(
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0L,
+
     @ColumnInfo(name = "title")
     val title: String,
 
     @ColumnInfo(name = "note")
     val note: String
 ): Parcelable
-{
-    @PrimaryKey(autoGenerate = true)
-    var id: Long = 0L
-}

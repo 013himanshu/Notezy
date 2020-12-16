@@ -56,6 +56,7 @@ class NoteFragment : Fragment() {
             findNavController().navigate(R.id.action_noteFragment_to_addFragment)
         }
 
+
         return binding.root
     }
 

@@ -26,8 +26,6 @@ class AddFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add, container, false)
 
-
-        //throwing error
         noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
 
 
@@ -47,7 +45,7 @@ class AddFragment : Fragment() {
                     return@setOnClickListener
                 }
                 else -> {
-                    noteViewModel.insertNote(Note(noteTitle, noteBody))
+                    noteViewModel.insertNote(Note(0, noteTitle, noteBody))
                     Toast.makeText(this.activity, "New Note Added.", Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_addFragment_to_noteFragment)
                 }
