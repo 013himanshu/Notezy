@@ -1,6 +1,7 @@
 package com.example.notezy.Fragments
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -63,12 +64,15 @@ class EditFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.delete_menu, menu)
+        inflater.inflate(R.menu.menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_delete) {
             deleteNote()
+        }
+        if (item.itemId == R.id.menu_share) {
+            shareNote()
         }
 
         return super.onOptionsItemSelected(item)
@@ -85,5 +89,12 @@ class EditFragment : Fragment() {
         builder.setTitle("Delete Note?")
         builder.setMessage("Are you sure you want to delete this note?")
         builder.create().show()
+    }
+
+    private fun shareNote() {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT, "${binding.editTitleText.text.toString().trim()} \n\n ${binding.editNoteText.text.toString().trim()}")
+        startActivity(Intent.createChooser(intent, "Share Note"))
     }
 }
