@@ -1,10 +1,9 @@
 package com.example.notezy.Fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -36,6 +35,9 @@ class EditFragment : Fragment() {
             updateData()
         }
 
+        //Adds delete menu to toolbar...
+        setHasOptionsMenu(true)
+
         return binding.root
     }
 
@@ -60,4 +62,28 @@ class EditFragment : Fragment() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_delete) {
+            deleteNote()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteNote() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") { _, _ ->
+            noteViewModel.deleteNote(args.currentNote)
+            Toast.makeText(requireContext(), "Note Deleted.", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_editFragment_to_noteFragment)
+        }
+        builder.setNegativeButton("No") { _,_ -> }
+        builder.setTitle("Delete Note?")
+        builder.setMessage("Are you sure you want to delete this note?")
+        builder.create().show()
+    }
 }
