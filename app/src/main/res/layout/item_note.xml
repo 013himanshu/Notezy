@@ -31,7 +31,9 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:text="Title"
-                    android:fontFamily="@font/oswald"/>
+                    android:fontFamily="@font/oswald"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
 
                 <TextView
                     android:id="@+id/rvBody"
@@ -41,7 +43,9 @@
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="16sp"
                     android:fontFamily="sans-serif-condensed"
-                    tools:text="Do your homework and submit the assignment by 5 P.M." />
+                    android:maxLines="6"
+                    android:ellipsize="end"
+                    tools:text="Lorem Ipsum." />
 
             </LinearLayout>
 
