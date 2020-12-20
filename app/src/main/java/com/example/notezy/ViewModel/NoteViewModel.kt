@@ -4,13 +4,13 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.notezy.Model.Note
 import com.example.notezy.Database.NoteDatabase
+import com.example.notezy.Model.Note
 import com.example.notezy.Repository.NoteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class NoteViewModel(application: Application): AndroidViewModel(application) {
+class NoteViewModel(application: Application) : AndroidViewModel(application) {
     val allNotes: LiveData<List<Note>>
     private val repository: NoteRepository
 

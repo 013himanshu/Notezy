@@ -1,9 +1,7 @@
 package com.example.notezy.Adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notezy.Fragments.NoteFragmentDirections
@@ -13,7 +11,8 @@ import com.example.notezy.databinding.ItemNoteBinding
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.MyViewHolder>() {
     var allNotes = ArrayList<Note>()
 
-    inner class MyViewHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {}
+    inner class MyViewHolder(val binding: ItemNoteBinding) :
+        RecyclerView.ViewHolder(binding.root) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

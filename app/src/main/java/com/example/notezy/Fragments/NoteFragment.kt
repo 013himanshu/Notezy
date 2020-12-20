@@ -4,8 +4,8 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -31,7 +31,8 @@ class NoteFragment : Fragment() {
         //RecyclerView...
         val recyclerview = binding.recyclerview
         val adapter = NoteAdapter()
-        recyclerview.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        recyclerview.layoutManager =
+            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerview.adapter = adapter
 
 
@@ -41,8 +42,7 @@ class NoteFragment : Fragment() {
             if (list.isEmpty()) {
                 binding.recyclerview.visibility = View.INVISIBLE
                 binding.rvEmptyLayout.visibility = View.VISIBLE
-            }
-            else {
+            } else {
                 binding.recyclerview.visibility = View.VISIBLE
                 binding.rvEmptyLayout.visibility = View.INVISIBLE
                 adapter.setData(list)
@@ -77,7 +77,7 @@ class NoteFragment : Fragment() {
             viewModel.deleteAll()
             Toast.makeText(requireContext(), "All Notes Deleted.", Toast.LENGTH_SHORT).show()
         }
-        builder.setNegativeButton("No") { _,_ -> }
+        builder.setNegativeButton("No") { _, _ -> }
         builder.setTitle("Delete Everything?")
         builder.setMessage("Are you sure you want to delete all notes?")
         builder.create().show()

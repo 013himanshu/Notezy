@@ -4,9 +4,9 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -85,7 +85,7 @@ class EditFragment : Fragment() {
             Toast.makeText(requireContext(), "Note Deleted.", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_editFragment_to_noteFragment)
         }
-        builder.setNegativeButton("No") { _,_ -> }
+        builder.setNegativeButton("No") { _, _ -> }
         builder.setTitle("Delete Note?")
         builder.setMessage("Are you sure you want to delete this note?")
         builder.create().show()
@@ -94,7 +94,12 @@ class EditFragment : Fragment() {
     private fun shareNote() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_TEXT, "${binding.editTitleText.text.toString().trim()} \n \n ${binding.editNoteText.text.toString().trim()}")
+        intent.putExtra(
+            Intent.EXTRA_TEXT,
+            "${
+                binding.editTitleText.text.toString().trim()
+            } \n \n ${binding.editNoteText.text.toString().trim()}"
+        )
         startActivity(Intent.createChooser(intent, "Share Note"))
     }
 }
