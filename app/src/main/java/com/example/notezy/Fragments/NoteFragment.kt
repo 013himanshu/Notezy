@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.notezy.Adapter.NoteAdapter
 import com.example.notezy.R
+import com.example.notezy.Utils.hideKeyboard
 import com.example.notezy.ViewModel.NoteViewModel
 import com.example.notezy.databinding.FragmentNoteBinding
 
@@ -55,17 +56,18 @@ class NoteFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
+        //Hide keyboard (bug)
+        hideKeyboard(requireActivity())
+
         return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu, menu)
-        val shareMenu = menu.findItem(R.id.menu_share)
-        shareMenu.isVisible = false
+        inflater.inflate(R.menu.note_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_delete) {
+        if (item.itemId == R.id.note_delete) {
             deleteAllNote()
         }
         return super.onOptionsItemSelected(item)

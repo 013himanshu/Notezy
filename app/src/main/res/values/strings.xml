@@ -10,4 +10,6 @@
     <string name="delete">Delete</string>
     <string name="share">Share</string>
     <string name="notezy">Notezy</string>
+    <string name="delete_all">Delete All</string>
+    <string name="search">Search</string>
 </resources>
