@@ -13,13 +13,17 @@
         <action
             android:id="@+id/action_noteFragment_to_addFragment"
             app:destination="@id/addFragment"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/from_down"
+            app:exitAnim="@anim/to_up"
+            app:popEnterAnim="@anim/from_up"
+            app:popExitAnim="@anim/to_down" />
         <action
             android:id="@+id/action_noteFragment_to_editFragment"
-            app:destination="@id/editFragment" />
+            app:destination="@id/editFragment"
+            app:enterAnim="@anim/from_down"
+            app:exitAnim="@anim/to_up"
+            app:popEnterAnim="@anim/from_up"
+            app:popExitAnim="@anim/to_down" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -29,11 +33,9 @@
         <action
             android:id="@+id/action_addFragment_to_noteFragment"
             app:destination="@id/noteFragment"
-            app:popUpTo="@id/noteFragment"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/from_up"
+            app:exitAnim="@anim/to_down"
+            app:popUpTo="@id/noteFragment" />
     </fragment>
     <fragment
         android:id="@+id/editFragment"
@@ -43,11 +45,9 @@
         <action
             android:id="@+id/action_editFragment_to_noteFragment"
             app:destination="@id/noteFragment"
-            app:popUpTo="@id/noteFragment"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/from_up"
+            app:exitAnim="@anim/to_down"
+            app:popUpTo="@id/noteFragment" />
         <argument
             android:name="currentNote"
             app:argType="com.example.notezy.Model.Note" />
