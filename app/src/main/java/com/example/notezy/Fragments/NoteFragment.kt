@@ -14,6 +14,7 @@ import com.example.notezy.Adapter.NoteAdapter
 import com.example.notezy.R
 import com.example.notezy.Utils.hideKeyboard
 import com.example.notezy.ViewModel.NoteViewModel
+import com.example.notezy.ViewModel.SharedViewModel
 import com.example.notezy.databinding.FragmentNoteBinding
 
 
@@ -21,6 +22,7 @@ class NoteFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteBinding
     lateinit var viewModel: NoteViewModel
+    lateinit var sharedViewModel: SharedViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,15 +41,17 @@ class NoteFragment : Fragment() {
 
         //NoteViewModel...
         viewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
+
+        //sharedViewModel...
+        sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+
         viewModel.allNotes.observe(viewLifecycleOwner, Observer { list ->
-            if (list.isEmpty()) {
-                binding.recyclerview.visibility = View.INVISIBLE
-                binding.rvEmptyLayout.visibility = View.VISIBLE
-            } else {
-                binding.recyclerview.visibility = View.VISIBLE
-                binding.rvEmptyLayout.visibility = View.INVISIBLE
-                adapter.setData(list)
-            }
+            sharedViewModel.checkIfDatabaseEmpty(list)
+            adapter.setData(list)
+        })
+
+        sharedViewModel.emptyData.observe(viewLifecycleOwner, {
+            showEmptyView(it)
         })
 
         binding.floatingActionButton.setOnClickListener {
@@ -60,6 +64,14 @@ class NoteFragment : Fragment() {
         hideKeyboard(requireActivity())
 
         return binding.root
+    }
+
+    private fun showEmptyView(emptyDatabase: Boolean) {
+        if (emptyDatabase) {
+            binding.rvEmptyLayout.visibility = View.VISIBLE
+        } else {
+            binding.rvEmptyLayout.visibility = View.INVISIBLE
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
