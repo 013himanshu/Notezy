@@ -1,5 +1,5 @@
 # Notezy
-### An android Note Making app with Room Database packed with features like LiveData, MVVM architecture, etc.
+#### An android Note Making app with [Room Database](https://developer.android.com/reference/androidx/room/RoomDatabase) packed with features like [LiveData](https://developer.android.com/topic/libraries/architecture/livedata), MVVM architecture, etc.
 It can be used in making your daily notes like tasks to perform in a day or a list of shopping items, etc.
 
 ## Libraries Used:
