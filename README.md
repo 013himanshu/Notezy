@@ -23,6 +23,6 @@ It can be used in making your daily notes like tasks to perform in a day or a li
     <td><img src="screenshots/delete_all.png" height="400px"/></td>
   </tr>
   <tr>
-    <td><td><img src="screenshots/share_note.png" height="400px"/></td></td>
+    <td><img src="screenshots/share_note.png" height="400px"/></td>
   </tr>
 </table>
