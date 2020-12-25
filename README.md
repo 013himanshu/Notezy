@@ -17,9 +17,12 @@ It can be used in making your daily notes like tasks to perform in a day or a li
     <td><img src="screenshots/add_note.png" height="400px"/></td>
   </tr>
   <tr>
+    <td><img src="screenshots/search_note.png" height="400px"></td>
     <td><img src="screenshots/edit_note.png" height="400px"/></td>
     <td><img src="screenshots/delete_note.png" height="400px"/></td>
     <td><img src="screenshots/delete_all.png" height="400px"/></td>
-    <td><img src="screenshots/share_note.png" height="400px"/></td>
+  </tr>
+  <tr>
+    <td colspan="3"><td><img src="screenshots/share_note.png" height="400px"/></td></td>
   </tr>
 </table>

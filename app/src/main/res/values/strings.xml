@@ -12,4 +12,5 @@
     <string name="notezy">Notezy</string>
     <string name="delete_all">Delete All</string>
     <string name="search">Search</string>
+    <string name="version_app">v 2.0</string>
 </resources>
