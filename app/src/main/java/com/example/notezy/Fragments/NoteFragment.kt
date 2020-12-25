@@ -83,9 +83,9 @@ class NoteFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.note_menu, menu)
 
-        val search: MenuItem = menu.findItem(R.id.note_search)
-        val searchView: SearchView? = search.actionView as? SearchView
-        searchView?.isSubmitButtonEnabled = true
+        val search = menu.findItem(R.id.note_search)
+        val searchView = search.actionView as SearchView
+        searchView?.isSubmitButtonEnabled = false
         searchView?.setOnQueryTextListener(this)
     }
 
