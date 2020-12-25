@@ -5,7 +5,7 @@
         android:title="@string/search"
         android:icon="@drawable/ic_baseline_search_24"
         android:iconTint="@color/white"
-        app:showAsAction="ifRoom"
+        app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
 
     <item android:id="@+id/note_delete"
